@@ -11,8 +11,10 @@ using System.Windows.Forms;
 namespace Jesture
 {
     public partial class Form1 : Form
+
     {
         private string folderName;
+        private ListBox directoryListBox;
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +24,11 @@ namespace Jesture
         {
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            directoryListBox = f2.getDirectories();
+            for(int i = 0; i < directoryListBox.Items.Count; i++)
+            {
+                Console.WriteLine("test: " + directoryListBox.Items[i].ToString());
+            }
         }
     }
 }

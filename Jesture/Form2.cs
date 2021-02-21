@@ -33,9 +33,29 @@ namespace Jesture
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void removeButton_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+        }
 
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        public ListBox getDirectories()
+        {
+                return listBox1;
+            
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            this.Hide();
         }
     }
 }

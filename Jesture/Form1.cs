@@ -17,7 +17,13 @@ namespace Jesture
     {
         private string folderName;
         private ListBox directoryListBox;
+
+        //folder window
         private Form2 f2 = null;
+
+        //time session input window
+        private Form3 f3 = null;
+
         private string[] pictures = null;
         private Random rand = new Random();
         private int timeLeft;
@@ -76,6 +82,24 @@ namespace Jesture
                 circularProgressBar1.Value = timeLeft;
                 circularProgressBar1.Update();
             }
+        }
+
+        private void customButton_Click(object sender, EventArgs e)
+        {
+            if (f3 == null)
+            {
+                f3 = new Form3();
+                f3.ShowDialog();
+            }
+            else
+            {
+                f3.Show();
+            }
+        }
+
+        private void circularProgressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
